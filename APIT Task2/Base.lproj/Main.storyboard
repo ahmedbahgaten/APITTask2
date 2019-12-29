@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Sa-Xz-IB0">
-                                <rect key="frame" x="0.0" y="88" width="414" height="724"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myCell" rowHeight="173" id="qB8-WK-Ddm" customClass="APITTableViewCell" customModule="APIT_Task2" customModuleProvider="target">
@@ -61,15 +61,10 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncL-dy-k63">
-                                <rect key="frame" x="346" y="820" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5Sa-Xz-IB0" secondAttribute="bottom" constant="50" id="3uU-4r-80S"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5Sa-Xz-IB0" secondAttribute="bottom" id="3uU-4r-80S"/>
                             <constraint firstItem="5Sa-Xz-IB0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CAm-qS-sec"/>
                             <constraint firstItem="5Sa-Xz-IB0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PMd-fR-ySA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Sa-Xz-IB0" secondAttribute="trailing" id="b6h-Qm-qi2"/>
@@ -91,10 +86,10 @@
             </objects>
             <point key="canvasLocation" x="1001" y="118"/>
         </scene>
-        <!--Adding Screen View Controller-->
+        <!--Saving Screen View Controller-->
         <scene sceneID="tXx-vO-M7M">
             <objects>
-                <viewController storyboardIdentifier="AddingScreen" id="Q1a-YF-p7a" customClass="AddingScreenViewController" customModule="APIT_Task2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddingScreen" id="Q1a-YF-p7a" customClass="SavingScreenViewController" customModule="APIT_Task2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zJe-pi-Msx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,7 +137,7 @@
                                     <constraint firstAttribute="height" constant="49" id="yxG-iy-Uwt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                <state key="normal" title="Add">
+                                <state key="normal" title="Save">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -172,6 +167,7 @@
                     </view>
                     <connections>
                         <outlet property="bodyTextField" destination="dnv-zt-yOi" id="iCr-BC-S5z"/>
+                        <outlet property="saveButton" destination="1ZT-Up-r2d" id="G1P-Hr-ENn"/>
                         <outlet property="titleTextField" destination="4Xd-GC-gyW" id="S0e-qq-Eih"/>
                     </connections>
                 </viewController>

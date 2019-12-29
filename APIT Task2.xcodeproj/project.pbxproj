@@ -18,7 +18,7 @@
 		E21A7BFE23B8D15A0048DDEC /* AuthenticationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21A7BFD23B8D15A0048DDEC /* AuthenticationRouter.swift */; };
 		E21A7C0123B8D1A30048DDEC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21A7C0023B8D1A30048DDEC /* Model.swift */; };
 		E21A7C0323B8D2C70048DDEC /* APITTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21A7C0223B8D2C70048DDEC /* APITTableViewCell.swift */; };
-		E21A7C0723B8F1F30048DDEC /* AddingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21A7C0623B8F1F30048DDEC /* AddingScreenViewController.swift */; };
+		E21A7C0723B8F1F30048DDEC /* SavingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21A7C0623B8F1F30048DDEC /* SavingScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +36,7 @@
 		E21A7BFD23B8D15A0048DDEC /* AuthenticationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRouter.swift; sourceTree = "<group>"; };
 		E21A7C0023B8D1A30048DDEC /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		E21A7C0223B8D2C70048DDEC /* APITTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITTableViewCell.swift; sourceTree = "<group>"; };
-		E21A7C0623B8F1F30048DDEC /* AddingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingScreenViewController.swift; sourceTree = "<group>"; };
+		E21A7C0623B8F1F30048DDEC /* SavingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingScreenViewController.swift; sourceTree = "<group>"; };
 		E5B670C6A19B56617A3122B6 /* Pods_APIT_Task2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APIT_Task2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -96,7 +96,7 @@
 				E21A7BE823B8CCBE0048DDEC /* SceneDelegate.swift */,
 				E21A7BEA23B8CCBE0048DDEC /* DataPresenterViewController.swift */,
 				E21A7C0223B8D2C70048DDEC /* APITTableViewCell.swift */,
-				E21A7C0623B8F1F30048DDEC /* AddingScreenViewController.swift */,
+				E21A7C0623B8F1F30048DDEC /* SavingScreenViewController.swift */,
 				E21A7BEC23B8CCBE0048DDEC /* Main.storyboard */,
 				E21A7BEF23B8CCC10048DDEC /* Assets.xcassets */,
 				E21A7BF123B8CCC10048DDEC /* LaunchScreen.storyboard */,
@@ -239,7 +239,7 @@
 			files = (
 				E21A7BFB23B8D0E70048DDEC /* NetworkManager.swift in Sources */,
 				E21A7BEB23B8CCBE0048DDEC /* DataPresenterViewController.swift in Sources */,
-				E21A7C0723B8F1F30048DDEC /* AddingScreenViewController.swift in Sources */,
+				E21A7C0723B8F1F30048DDEC /* SavingScreenViewController.swift in Sources */,
 				E21A7C0323B8D2C70048DDEC /* APITTableViewCell.swift in Sources */,
 				E21A7BFE23B8D15A0048DDEC /* AuthenticationRouter.swift in Sources */,
 				E21A7C0123B8D1A30048DDEC /* Model.swift in Sources */,
