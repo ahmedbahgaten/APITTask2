@@ -1,48 +1,48 @@
 import UIKit
 
-class ViewController: UIViewController,SavingDelegateProtocol {
+class HomeViewController: UIViewController{
     
     @IBOutlet weak var tableView: UITableView!
-    private var ReceivedData = [ServerResponse]()
-    var ReceivedTitle = ""
-    var ReceivedBody = ""
+    
+    private var receivedData = [ServerResponse]()
+    var receivedTitle = ""
+    var receivedBody = ""
     var selectedIndex = 0
     
     lazy var refreshControl:UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.tintColor = .green
-        refreshControl.addTarget(self, action: #selector(requestData), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(requestDataRefresher), for: .valueChanged)
         return refreshControl
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        getDataFromAPI()
+        getDataFromServer()
         setTableViewDelegateAndDataSource()
         self.hideKeyboardWhenTappedAround()
         tableView.refreshControl = refreshControl
         
         
     }
-    @IBAction func NavigationBarButtonIsClicked(_ sender: Any) {
+    @IBAction func navigationBarButtonIsClicked(_ sender: Any) {
         navigateToSavingScreen()
     }
-    @objc func requestData(){
-        getDataFromAPI()
+    @objc func requestDataRefresher(){
+        getDataFromServer()
         let deadLine = DispatchTime.now() + .milliseconds(700)
         DispatchQueue.main.asyncAfter(deadline: deadLine) {
             self.refreshControl.endRefreshing()
         }
     }
     func navigateToSavingScreen () {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let SavingScreenController = storyBoard.instantiateViewController(identifier: "AddingScreen") as! SavingScreenViewController
+        let SavingScreenController = storyboard?.instantiateViewController(identifier: "AddingScreen") as! SavingScreenViewController
         SavingScreenController.SavingDelegate = self
         present(SavingScreenController,animated: true,completion: nil)
     }
-    func getDataFromAPI () {
+    func getDataFromServer () {
         NetworkManager.DataFetching { (serverResponse, Error) in
             guard let response = serverResponse else {return}
-            self.ReceivedData = response
+            self.receivedData = response
             self.tableView.reloadData()
         }
     }
@@ -50,42 +50,23 @@ class ViewController: UIViewController,SavingDelegateProtocol {
         tableView.delegate = self
         tableView.dataSource = self
     }
-    func passingTitleAndBody(Title: String, Body: String, state:screenState) {
-        switch state {
-        case .add :
-            ReceivedTitle = Title
-            ReceivedBody = Body
-            let object = ServerResponse(userId: 1, id: 2, title: ReceivedTitle, body: ReceivedBody)
-            ReceivedData.append(object)
-            tableView.reloadData()
-        case .update :
-            ReceivedData[selectedIndex].title = Title
-            ReceivedData[selectedIndex].body = Body
-            tableView.reloadData()
-        }
-        
-        
-    }
+
     
 }
 
-extension ViewController: UITableViewDataSource,UITableViewDelegate {
+extension HomeViewController: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        ReceivedData.count
+        receivedData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "myCell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier , for:indexPath ) as! APITTableViewCell
-        
-        let title = ReceivedData[indexPath.row].title
-        let body = ReceivedData[indexPath.row].body
-        cell.configure(Title: title ?? "", Body: body ?? "")
+        let cell = tableView.dequeueReusableCell(withIdentifier: APITTableViewCell.cellIdentifier , for:indexPath ) as! APITTableViewCell
+        cell.configure(item: receivedData[indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
-            self.ReceivedData.remove(at: indexPath.row)
+            self.receivedData.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .fade)
             completionHandler(true)
         }
@@ -100,14 +81,34 @@ extension ViewController: UITableViewDataSource,UITableViewDelegate {
         openUpdateScreeen(index: indexPath.row)
     }
     private func openUpdateScreeen(index: Int) {
-        // open screeen
         let controller = storyboard?.instantiateViewController(identifier: "AddingScreen") as! SavingScreenViewController
         controller.SavingDelegate = self
-        controller.selectedItem = ReceivedData[index]
+        controller.selectedItem = receivedData[index]
         controller.state = .update
         self.present(controller, animated: true, completion: nil)
     }
+    private func prepareNanigation() {
+        
+    }
     
+}
+extension HomeViewController:SavingDelegateProtocol  {
+    func passingTitleAndBody(Title: String, Body: String, state:screenState) {
+        switch state {
+        case .add :
+            receivedTitle = Title
+            receivedBody = Body
+            let object = ServerResponse(userId: 1, id: 2, title: receivedTitle, body: receivedBody)
+            receivedData.append(object)
+            tableView.reloadData()
+        case .update :
+            receivedData[selectedIndex].title = Title
+            receivedData[selectedIndex].body = Body
+            tableView.reloadData()
+        }
+        
+        
+    }
 }
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {

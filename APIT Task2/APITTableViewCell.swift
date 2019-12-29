@@ -11,9 +11,10 @@ import UIKit
 class APITTableViewCell: UITableViewCell {
     @IBOutlet weak var TitleLabel: UILabel!
     @IBOutlet weak var BodyLabel: UILabel!
-    func configure (Title:String,Body:String) {
-        TitleLabel.text = Title
-        BodyLabel.text = Body
+    static  let cellIdentifier = "myCell"
+    func configure (item: ServerResponse) {
+        TitleLabel.text = item.title
+        BodyLabel.text = item.body
     }
 
 }
