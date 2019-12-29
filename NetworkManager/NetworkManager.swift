@@ -10,5 +10,27 @@ import Foundation
 import Alamofire
 
 class NetworkManager {
-    
-}
+    static func DataFetching (completionHandler: @escaping ([ServerResponse]?,Error?) -> Void){
+        let FetchingDataObject = AuthenticationRouter.DataFetching
+            AF.request(FetchingDataObject).responseJSON { (response) in
+                print (response)
+                switch response.result {
+                case .success:
+                    guard let responseData = response.data else {return}
+                    do {
+                        let decoder = JSONDecoder()
+                        let data = try decoder.decode([ServerResponse].self, from: responseData)
+                        completionHandler(data, nil)
+                    } catch {
+                        print("Whoops, an error occured: \(error)")
+                    }
+                case.failure(let error):
+                    completionHandler(nil,error)
+                }
+                
+            }
+        }
+    }
+
+
+
