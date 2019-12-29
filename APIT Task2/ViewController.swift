@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    
     private var ReceivedData = [ServerResponse]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,7 @@ class ViewController: UIViewController {
         NetworkManager.DataFetching { (serverResponse, Error) in
             guard let response = serverResponse else {return}
             self.ReceivedData = response
+            self.tableView.reloadData()
             
         }
     }
@@ -38,7 +40,12 @@ extension ViewController: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "myCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier , for:indexPath ) as! APITTableViewCell
-        
+         let userID = ReceivedData[indexPath.row].userId
+         let id = ReceivedData[indexPath.row].id
+         let title = ReceivedData[indexPath.row].title
+         let body = ReceivedData[indexPath.row].body
+        cell.configure(userID: userID ?? 1, ID: id ?? 1, Title: title ?? "", Body: body ?? "")
+        return cell
     }
     
     
