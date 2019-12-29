@@ -1,0 +1,6 @@
+framework module Pods_APIT_Task2 {
+  umbrella header "Pods-APIT Task2-umbrella.h"
+
+  export *
+  module * { export * }
+}
