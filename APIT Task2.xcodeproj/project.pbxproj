@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,10 @@
 		E21A7BEE23B8CCBE0048DDEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E21A7BEC23B8CCBE0048DDEC /* Main.storyboard */; };
 		E21A7BF023B8CCC10048DDEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E21A7BEF23B8CCC10048DDEC /* Assets.xcassets */; };
 		E21A7BF323B8CCC10048DDEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E21A7BF123B8CCC10048DDEC /* LaunchScreen.storyboard */; };
+		E21A7BFB23B8D0E70048DDEC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21A7BFA23B8D0E70048DDEC /* NetworkManager.swift */; };
+		E21A7BFE23B8D15A0048DDEC /* AuthenticationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21A7BFD23B8D15A0048DDEC /* AuthenticationRouter.swift */; };
+		E21A7C0123B8D1A30048DDEC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21A7C0023B8D1A30048DDEC /* Model.swift */; };
+		E21A7C0323B8D2C70048DDEC /* APITTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21A7C0223B8D2C70048DDEC /* APITTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,10 @@
 		E21A7BEF23B8CCC10048DDEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E21A7BF223B8CCC10048DDEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E21A7BF423B8CCC10048DDEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E21A7BFA23B8D0E70048DDEC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		E21A7BFD23B8D15A0048DDEC /* AuthenticationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRouter.swift; sourceTree = "<group>"; };
+		E21A7C0023B8D1A30048DDEC /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		E21A7C0223B8D2C70048DDEC /* APITTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITTableViewCell.swift; sourceTree = "<group>"; };
 		E5B670C6A19B56617A3122B6 /* Pods_APIT_Task2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APIT_Task2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -56,13 +64,14 @@
 				09A11D820FBCF85FEE44DD21 /* Pods-APIT Task2.debug.xcconfig */,
 				14E6A23E580894E03F6C0A14 /* Pods-APIT Task2.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		E21A7BDA23B8CCBE0048DDEC = {
 			isa = PBXGroup;
 			children = (
+				E21A7BFF23B8D1850048DDEC /* Model */,
+				E21A7BFC23B8D0FD0048DDEC /* NetworkManager */,
 				E21A7BE523B8CCBE0048DDEC /* APIT Task2 */,
 				E21A7BE423B8CCBE0048DDEC /* Products */,
 				D43D2D19320205F3CD765A75 /* Pods */,
@@ -84,12 +93,30 @@
 				E21A7BE623B8CCBE0048DDEC /* AppDelegate.swift */,
 				E21A7BE823B8CCBE0048DDEC /* SceneDelegate.swift */,
 				E21A7BEA23B8CCBE0048DDEC /* ViewController.swift */,
+				E21A7C0223B8D2C70048DDEC /* APITTableViewCell.swift */,
 				E21A7BEC23B8CCBE0048DDEC /* Main.storyboard */,
 				E21A7BEF23B8CCC10048DDEC /* Assets.xcassets */,
 				E21A7BF123B8CCC10048DDEC /* LaunchScreen.storyboard */,
 				E21A7BF423B8CCC10048DDEC /* Info.plist */,
 			);
 			path = "APIT Task2";
+			sourceTree = "<group>";
+		};
+		E21A7BFC23B8D0FD0048DDEC /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				E21A7BFA23B8D0E70048DDEC /* NetworkManager.swift */,
+				E21A7BFD23B8D15A0048DDEC /* AuthenticationRouter.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		E21A7BFF23B8D1850048DDEC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E21A7C0023B8D1A30048DDEC /* Model.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,7 +234,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E21A7BFB23B8D0E70048DDEC /* NetworkManager.swift in Sources */,
 				E21A7BEB23B8CCBE0048DDEC /* ViewController.swift in Sources */,
+				E21A7C0323B8D2C70048DDEC /* APITTableViewCell.swift in Sources */,
+				E21A7BFE23B8D15A0048DDEC /* AuthenticationRouter.swift in Sources */,
+				E21A7C0123B8D1A30048DDEC /* Model.swift in Sources */,
 				E21A7BE723B8CCBE0048DDEC /* AppDelegate.swift in Sources */,
 				E21A7BE923B8CCBE0048DDEC /* SceneDelegate.swift in Sources */,
 			);
