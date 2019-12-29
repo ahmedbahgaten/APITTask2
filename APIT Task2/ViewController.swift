@@ -40,16 +40,23 @@ extension ViewController: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "myCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier , for:indexPath ) as! APITTableViewCell
-         let userID = ReceivedData[indexPath.row].userId
-         let id = ReceivedData[indexPath.row].id
-         let title = ReceivedData[indexPath.row].title
-         let body = ReceivedData[indexPath.row].body
-        cell.configure(userID: userID ?? 1, ID: id ?? 1, Title: title ?? "", Body: body ?? "")
+        
+        let title = ReceivedData[indexPath.row].title
+        let body = ReceivedData[indexPath.row].body
+        cell.configure(Title: title ?? "", Body: body ?? "")
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
+            self.ReceivedData.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+            completionHandler(true)
+        }
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])
+        deleteAction.backgroundColor = .red
+        return swipeConfiguration
+        
+    }
     
 }
-
-
 
