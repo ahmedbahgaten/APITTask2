@@ -16,5 +16,4 @@ class APITTableViewCell: UITableViewCell {
         TitleLabel.text = item.title
         BodyLabel.text = item.body
     }
-
 }
