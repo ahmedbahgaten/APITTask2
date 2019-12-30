@@ -13,7 +13,6 @@ class NetworkManager {
     static func DataFetching (completionHandler: @escaping ([ServerResponse]?,Error?) -> Void){
         let FetchingDataObject = AuthenticationRouter.DataFetching
             AF.request(FetchingDataObject).responseJSON { (response) in
-                print (response)
                 switch response.result {
                 case .success:
                     guard let responseData = response.data else {return}

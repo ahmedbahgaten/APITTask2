@@ -1,11 +1,3 @@
-//
-//  AddingScreenViewController.swift
-//  APIT Task2
-//
-//  Created by AHMED on 12/29/19.
-//  Copyright © 2019 AHMED. All rights reserved.
-//
-
 import UIKit
 
 protocol SavingDelegateProtocol: class {
@@ -26,6 +18,7 @@ class SavingScreenViewController: UIViewController {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         handleScreenState()
+        circularSavingButton()
     }
     private func handleScreenState(){
         switch state {
@@ -46,8 +39,12 @@ class SavingScreenViewController: UIViewController {
         bodyTextField.text = selectedItem?.body
           saveButton.setTitle("update", for: .normal)
     }
+    func circularSavingButton () {
+        saveButton.layer.cornerRadius = saveButton.layer.frame.size.width / 2
+        
+    }
     
-    @IBAction func AddButtonIsTapped(_ sender: Any) {
+    @IBAction func savingButtonIsTapped(_ sender: Any) {
         guard let Title = titleTextField.text else {return}
         guard let Body = bodyTextField.text else {return}
         SavingDelegate?.passingTitleAndBody(Title: Title, Body: Body,state:state)
