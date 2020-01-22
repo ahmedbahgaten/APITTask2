@@ -12,6 +12,5 @@ class HomeConfigurator {
         let router = homeRouterImplementation(view: homeViewController)
         let presenter = homePresenterImplementation(view: homeViewController, router: router)
         homeViewController.presenter = presenter
-        homeViewController.router = router
     }
 }

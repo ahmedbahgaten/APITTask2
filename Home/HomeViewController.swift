@@ -18,7 +18,7 @@ class HomeViewController: UIViewController,homeViewProtocol{
     @IBOutlet weak var tableView: UITableView!
     //MARK:-Actions
     @IBAction func addButtonIsTapped(_ sender: Any) {
-        self.router.navigateToSavingScreen(viewController: self)
+        self.presenter.navigateToSavingScreen(view: self)
     }
     //MARK:-DidLoad function
     override func viewDidLoad() {

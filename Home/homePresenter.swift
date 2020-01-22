@@ -14,9 +14,9 @@ protocol homePresenter {
     func removeItemOfData(atIndex:Int)
     func handleUserID() -> [Int]
     func updateData(atIndex:Int,Title:String,Body:String)
+    func navigateToSavingScreen(view:HomeViewController)
 }
 class homePresenterImplementation:homePresenter {
-    
     weak var homeView: homeViewProtocol?
     var receivedData = [ServerResponse]()
     var router:homeRouter!
@@ -67,4 +67,8 @@ class homePresenterImplementation:homePresenter {
         receivedData[atIndex].title = Title
         receivedData[atIndex].body = Body
     }
+  func navigateToSavingScreen(view: HomeViewController) {
+    self.router.navigateToSavingScreen(viewController: view)
+    }
+    
 }
