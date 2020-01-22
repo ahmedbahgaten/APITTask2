@@ -11,7 +11,6 @@ import Alamofire
 
 enum AuthenticationRouter :URLRequestConvertible {
     case DataFetching
-
     func asURLRequest() throws -> URLRequest {
         let url:URL = {
             switch self {

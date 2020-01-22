@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ServerResponse:Codable {
+struct ServerResponse:Decodable {
     var userId:Int?
     var id:Int?
     var title:String?

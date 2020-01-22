@@ -13,8 +13,9 @@ class NetworkManager {
     static func DataFetching (completionHandler: @escaping ([ServerResponse]?,Error?) -> Void){
         let FetchingDataObject = AuthenticationRouter.DataFetching
             AF.request(FetchingDataObject).responseJSON { (response) in
-                switch response.result {
+                switch response.result{
                 case .success:
+                    print(response.data!)
                     guard let responseData = response.data else {return}
                     do {
                         let decoder = JSONDecoder()

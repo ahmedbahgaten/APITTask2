@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		020301AD377CC78B2705F3B5 /* Pods_APIT_Task2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B670C6A19B56617A3122B6 /* Pods_APIT_Task2.framework */; };
+		0DD72777F794E3C3AEBCE8E0 /* Pods_APIT_Task2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D878ECE31D46DEABB52C53 /* Pods_APIT_Task2.framework */; };
 		E21A7BE723B8CCBE0048DDEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21A7BE623B8CCBE0048DDEC /* AppDelegate.swift */; };
 		E21A7BE923B8CCBE0048DDEC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21A7BE823B8CCBE0048DDEC /* SceneDelegate.swift */; };
-		E21A7BEB23B8CCBE0048DDEC /* DataPresenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21A7BEA23B8CCBE0048DDEC /* DataPresenterViewController.swift */; };
+		E21A7BEB23B8CCBE0048DDEC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21A7BEA23B8CCBE0048DDEC /* HomeViewController.swift */; };
 		E21A7BEE23B8CCBE0048DDEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E21A7BEC23B8CCBE0048DDEC /* Main.storyboard */; };
 		E21A7BF023B8CCC10048DDEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E21A7BEF23B8CCC10048DDEC /* Assets.xcassets */; };
 		E21A7BF323B8CCC10048DDEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E21A7BF123B8CCC10048DDEC /* LaunchScreen.storyboard */; };
@@ -18,16 +18,20 @@
 		E21A7BFE23B8D15A0048DDEC /* AuthenticationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21A7BFD23B8D15A0048DDEC /* AuthenticationRouter.swift */; };
 		E21A7C0123B8D1A30048DDEC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21A7C0023B8D1A30048DDEC /* Model.swift */; };
 		E21A7C0323B8D2C70048DDEC /* APITTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21A7C0223B8D2C70048DDEC /* APITTableViewCell.swift */; };
-		E21A7C0723B8F1F30048DDEC /* SavingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21A7C0623B8F1F30048DDEC /* SavingScreenViewController.swift */; };
+		E21A7C0723B8F1F30048DDEC /* AddingNewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21A7C0623B8F1F30048DDEC /* AddingNewItemViewController.swift */; };
+		E21B735623D65C1200431D5D /* homeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21B735523D65C1200431D5D /* homeConfigurator.swift */; };
+		E21B735823D65C1C00431D5D /* homePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21B735723D65C1C00431D5D /* homePresenter.swift */; };
+		E21B735A23D65C3E00431D5D /* homeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21B735923D65C3E00431D5D /* homeRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		09A11D820FBCF85FEE44DD21 /* Pods-APIT Task2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APIT Task2.debug.xcconfig"; path = "Target Support Files/Pods-APIT Task2/Pods-APIT Task2.debug.xcconfig"; sourceTree = "<group>"; };
-		14E6A23E580894E03F6C0A14 /* Pods-APIT Task2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APIT Task2.release.xcconfig"; path = "Target Support Files/Pods-APIT Task2/Pods-APIT Task2.release.xcconfig"; sourceTree = "<group>"; };
+		0F8DE149840C738EDAC302CE /* Pods-APIT Task2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APIT Task2.debug.xcconfig"; path = "Target Support Files/Pods-APIT Task2/Pods-APIT Task2.debug.xcconfig"; sourceTree = "<group>"; };
+		53D878ECE31D46DEABB52C53 /* Pods_APIT_Task2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APIT_Task2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C7469CB4E121DC4B42ABAF8 /* Pods-APIT Task2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APIT Task2.release.xcconfig"; path = "Target Support Files/Pods-APIT Task2/Pods-APIT Task2.release.xcconfig"; sourceTree = "<group>"; };
 		E21A7BE323B8CCBE0048DDEC /* APIT Task2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "APIT Task2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E21A7BE623B8CCBE0048DDEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E21A7BE823B8CCBE0048DDEC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E21A7BEA23B8CCBE0048DDEC /* DataPresenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPresenterViewController.swift; sourceTree = "<group>"; };
+		E21A7BEA23B8CCBE0048DDEC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E21A7BED23B8CCBE0048DDEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E21A7BEF23B8CCC10048DDEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E21A7BF223B8CCC10048DDEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,8 +40,10 @@
 		E21A7BFD23B8D15A0048DDEC /* AuthenticationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRouter.swift; sourceTree = "<group>"; };
 		E21A7C0023B8D1A30048DDEC /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		E21A7C0223B8D2C70048DDEC /* APITTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITTableViewCell.swift; sourceTree = "<group>"; };
-		E21A7C0623B8F1F30048DDEC /* SavingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingScreenViewController.swift; sourceTree = "<group>"; };
-		E5B670C6A19B56617A3122B6 /* Pods_APIT_Task2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APIT_Task2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E21A7C0623B8F1F30048DDEC /* AddingNewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNewItemViewController.swift; sourceTree = "<group>"; };
+		E21B735523D65C1200431D5D /* homeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeConfigurator.swift; sourceTree = "<group>"; };
+		E21B735723D65C1C00431D5D /* homePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homePresenter.swift; sourceTree = "<group>"; };
+		E21B735923D65C3E00431D5D /* homeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +51,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				020301AD377CC78B2705F3B5 /* Pods_APIT_Task2.framework in Frameworks */,
+				0DD72777F794E3C3AEBCE8E0 /* Pods_APIT_Task2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		80330970486710A10FC84B61 /* Frameworks */ = {
+		8AC2BF517517F472AE300823 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E5B670C6A19B56617A3122B6 /* Pods_APIT_Task2.framework */,
+				53D878ECE31D46DEABB52C53 /* Pods_APIT_Task2.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -63,8 +69,8 @@
 		D43D2D19320205F3CD765A75 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				09A11D820FBCF85FEE44DD21 /* Pods-APIT Task2.debug.xcconfig */,
-				14E6A23E580894E03F6C0A14 /* Pods-APIT Task2.release.xcconfig */,
+				0F8DE149840C738EDAC302CE /* Pods-APIT Task2.debug.xcconfig */,
+				8C7469CB4E121DC4B42ABAF8 /* Pods-APIT Task2.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -72,12 +78,18 @@
 		E21A7BDA23B8CCBE0048DDEC = {
 			isa = PBXGroup;
 			children = (
+				E21B735B23D65C4500431D5D /* SavingItem */,
+				E21B735423D65BFE00431D5D /* Home */,
+				E21A7C0C23BA954E0048DDEC /* APIT Task2 */,
 				E21A7BFF23B8D1850048DDEC /* Model */,
+				E21A7C0A23BA93B50048DDEC /* View */,
+				E21A7C0B23BA93E00048DDEC /* cell */,
 				E21A7BFC23B8D0FD0048DDEC /* NetworkManager */,
-				E21A7BE523B8CCBE0048DDEC /* APIT Task2 */,
+				E21A7C0823BA93230048DDEC /* helpers */,
+				E21A7BEF23B8CCC10048DDEC /* Assets.xcassets */,
 				E21A7BE423B8CCBE0048DDEC /* Products */,
 				D43D2D19320205F3CD765A75 /* Pods */,
-				80330970486710A10FC84B61 /* Frameworks */,
+				8AC2BF517517F472AE300823 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,22 +99,6 @@
 				E21A7BE323B8CCBE0048DDEC /* APIT Task2.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		E21A7BE523B8CCBE0048DDEC /* APIT Task2 */ = {
-			isa = PBXGroup;
-			children = (
-				E21A7BE623B8CCBE0048DDEC /* AppDelegate.swift */,
-				E21A7BE823B8CCBE0048DDEC /* SceneDelegate.swift */,
-				E21A7BEA23B8CCBE0048DDEC /* DataPresenterViewController.swift */,
-				E21A7C0223B8D2C70048DDEC /* APITTableViewCell.swift */,
-				E21A7C0623B8F1F30048DDEC /* SavingScreenViewController.swift */,
-				E21A7BEC23B8CCBE0048DDEC /* Main.storyboard */,
-				E21A7BEF23B8CCC10048DDEC /* Assets.xcassets */,
-				E21A7BF123B8CCC10048DDEC /* LaunchScreen.storyboard */,
-				E21A7BF423B8CCC10048DDEC /* Info.plist */,
-			);
-			path = "APIT Task2";
 			sourceTree = "<group>";
 		};
 		E21A7BFC23B8D0FD0048DDEC /* NetworkManager */ = {
@@ -122,6 +118,59 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E21A7C0823BA93230048DDEC /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E21A7BE623B8CCBE0048DDEC /* AppDelegate.swift */,
+				E21A7BE823B8CCBE0048DDEC /* SceneDelegate.swift */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
+		E21A7C0A23BA93B50048DDEC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E21A7BEC23B8CCBE0048DDEC /* Main.storyboard */,
+				E21A7BF123B8CCC10048DDEC /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E21A7C0B23BA93E00048DDEC /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				E21A7C0223B8D2C70048DDEC /* APITTableViewCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		E21A7C0C23BA954E0048DDEC /* APIT Task2 */ = {
+			isa = PBXGroup;
+			children = (
+				E21A7BF423B8CCC10048DDEC /* Info.plist */,
+			);
+			path = "APIT Task2";
+			sourceTree = "<group>";
+		};
+		E21B735423D65BFE00431D5D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E21A7BEA23B8CCBE0048DDEC /* HomeViewController.swift */,
+				E21B735723D65C1C00431D5D /* homePresenter.swift */,
+				E21B735923D65C3E00431D5D /* homeRouter.swift */,
+				E21B735523D65C1200431D5D /* homeConfigurator.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E21B735B23D65C4500431D5D /* SavingItem */ = {
+			isa = PBXGroup;
+			children = (
+				E21A7C0623B8F1F30048DDEC /* AddingNewItemViewController.swift */,
+			);
+			path = SavingItem;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,11 +178,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E21A7BF723B8CCC10048DDEC /* Build configuration list for PBXNativeTarget "APIT Task2" */;
 			buildPhases = (
-				301AE9CFF7098C239070ABBA /* [CP] Check Pods Manifest.lock */,
+				476691CFC796B1195E04C201 /* [CP] Check Pods Manifest.lock */,
 				E21A7BDF23B8CCBE0048DDEC /* Sources */,
 				E21A7BE023B8CCBE0048DDEC /* Frameworks */,
 				E21A7BE123B8CCBE0048DDEC /* Resources */,
-				13DF7848B5F5D3B4C69FE442 /* [CP] Embed Pods Frameworks */,
+				0F0764502BF984BC1527DEAB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -191,7 +240,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		13DF7848B5F5D3B4C69FE442 /* [CP] Embed Pods Frameworks */ = {
+		0F0764502BF984BC1527DEAB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -208,7 +257,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-APIT Task2/Pods-APIT Task2-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		301AE9CFF7098C239070ABBA /* [CP] Check Pods Manifest.lock */ = {
+		476691CFC796B1195E04C201 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -237,9 +286,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E21B735A23D65C3E00431D5D /* homeRouter.swift in Sources */,
 				E21A7BFB23B8D0E70048DDEC /* NetworkManager.swift in Sources */,
-				E21A7BEB23B8CCBE0048DDEC /* DataPresenterViewController.swift in Sources */,
-				E21A7C0723B8F1F30048DDEC /* SavingScreenViewController.swift in Sources */,
+				E21B735623D65C1200431D5D /* homeConfigurator.swift in Sources */,
+				E21A7BEB23B8CCBE0048DDEC /* HomeViewController.swift in Sources */,
+				E21A7C0723B8F1F30048DDEC /* AddingNewItemViewController.swift in Sources */,
+				E21B735823D65C1C00431D5D /* homePresenter.swift in Sources */,
 				E21A7C0323B8D2C70048DDEC /* APITTableViewCell.swift in Sources */,
 				E21A7BFE23B8D15A0048DDEC /* AuthenticationRouter.swift in Sources */,
 				E21A7C0123B8D1A30048DDEC /* Model.swift in Sources */,
@@ -386,7 +438,7 @@
 		};
 		E21A7BF823B8CCC10048DDEC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09A11D820FBCF85FEE44DD21 /* Pods-APIT Task2.debug.xcconfig */;
+			baseConfigurationReference = 0F8DE149840C738EDAC302CE /* Pods-APIT Task2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -404,7 +456,7 @@
 		};
 		E21A7BF923B8CCC10048DDEC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14E6A23E580894E03F6C0A14 /* Pods-APIT Task2.release.xcconfig */;
+			baseConfigurationReference = 8C7469CB4E121DC4B42ABAF8 /* Pods-APIT Task2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
