@@ -19,7 +19,7 @@ protocol homePresenter {
 class homePresenterImplementation:homePresenter {
     weak var homeView: homeViewProtocol?
     var receivedData = [ServerResponse]()
-    var router:homeRouter!
+    var router:homeRouter?
     
     init(view:homeViewProtocol,router:homeRouter) {
             self.homeView = view
@@ -68,7 +68,7 @@ class homePresenterImplementation:homePresenter {
         receivedData[atIndex].body = Body
     }
   func navigateToSavingScreen(view: HomeViewController) {
-    self.router.navigateToSavingScreen(viewController: view)
+    self.router?.navigateToSavingScreen(viewController: view)
     }
     
 }

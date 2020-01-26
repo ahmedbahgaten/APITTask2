@@ -6,8 +6,8 @@ protocol homeViewProtocol:class {
 class HomeViewController: UIViewController,homeViewProtocol{
     //MARK:-Variables
     var selectedIndex = 0
-    var presenter:homePresenter!
-    var router:homeRouter!
+    var presenter:homePresenter?
+    var router:homeRouter?
     lazy var Refresher:UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.tintColor = .green
@@ -18,7 +18,7 @@ class HomeViewController: UIViewController,homeViewProtocol{
     @IBOutlet weak var tableView: UITableView!
     //MARK:-Actions
     @IBAction func addButtonIsTapped(_ sender: Any) {
-        self.presenter.navigateToSavingScreen(view: self)
+        self.presenter?.navigateToSavingScreen(view: self)
     }
     //MARK:-DidLoad function
     override func viewDidLoad() {
@@ -27,14 +27,15 @@ class HomeViewController: UIViewController,homeViewProtocol{
         tableViewSetup()
         self.hideKeyboardWhenTappedAround()
         tableView.refreshControl = Refresher
-        self.presenter.fetchData()
+        presenter?.fetchData()
     }
     //MARK:-Functions
     @objc func requestDataRefresher(){
-        self.presenter.fetchData()
         let deadLine = DispatchTime.now() + .milliseconds(1000)
         DispatchQueue.main.asyncAfter(deadline: deadLine) { 
             self.Refresher.endRefreshing()
+            self.presenter?.fetchData()
+
         }
     }
     func tableViewSetup () {
@@ -54,16 +55,17 @@ class HomeViewController: UIViewController,homeViewProtocol{
 //MARK:-Setting Up the tableview
 extension HomeViewController: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.presenter.getDataCounter()
+        self.presenter?.getDataCounter() ?? 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: APITTableViewCell.cellIdentifier , for:indexPath ) as! APITTableViewCell
-        cell.configure(item: self.presenter.getItem(atIndex: indexPath.row))
+        cell.configure(item: self.presenter?.getItem(atIndex: indexPath.row) ?? ServerResponse())
+        
         return cell
     }
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
-            self.presenter.removeItemOfData(atIndex: indexPath.row)
+            self.presenter?.removeItemOfData(atIndex: indexPath.row)
             completionHandler(true)
         }
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])
@@ -78,7 +80,7 @@ extension HomeViewController: UITableViewDataSource,UITableViewDelegate {
     private func openUpdateScreeen(index: Int) {
         let savingScreenViewController = storyboard?.instantiateViewController(identifier: "SavingScreen") as! SavingScreenViewController
         savingScreenViewController.SavingDelegate = self
-        savingScreenViewController.selectedItem = self.presenter.getItem(atIndex: index)
+        savingScreenViewController.selectedItem = self.presenter?.getItem(atIndex: index)
         savingScreenViewController.state = .update
         self.present(savingScreenViewController, animated: true, completion: nil)
     }
@@ -88,10 +90,10 @@ extension HomeViewController:SavingDelegateProtocol  {
     func passingTitleAndBody(Title: String, Body: String, state:screenState) {
         switch state {
         case .add :
-            self.presenter.addNewItem(title: Title, body: Body)
+            self.presenter?.addNewItem(title: Title, body: Body)
             tableView.reloadData()
         case .update :
-            self.presenter.updateData(atIndex: selectedIndex,Title:Title,Body:Body)
+            self.presenter?.updateData(atIndex: selectedIndex,Title:Title,Body:Body)
             tableView.reloadData()
         }
     }
