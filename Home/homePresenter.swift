@@ -14,7 +14,7 @@ protocol homePresenter {
     func removeItemOfData(atIndex:Int)
     func handleUserID() -> [Int]
     func updateData(atIndex:Int,Title:String,Body:String)
-    func navigateToSavingScreen(view:HomeViewController)
+    func navigateBackToHomeScreen(view:HomeViewController)
 }
 class homePresenterImplementation:homePresenter {
     weak var homeView: homeViewProtocol?
@@ -67,8 +67,8 @@ class homePresenterImplementation:homePresenter {
         receivedData[atIndex].title = Title
         receivedData[atIndex].body = Body
     }
-  func navigateToSavingScreen(view: HomeViewController) {
-    self.router?.navigateToSavingScreen(viewController: view)
+  func navigateBackToHomeScreen(view: HomeViewController) {
+    self.router?.navigateToHomeScreen(viewController: view)
     }
     
 }

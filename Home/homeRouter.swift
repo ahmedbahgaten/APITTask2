@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 protocol homeRouter:class {
 //    var homeViewVar: homeView! {get set}
-    func navigateToSavingScreen(viewController:HomeViewController)
+    func navigateToHomeScreen(viewController:HomeViewController)
 }
 class homeRouterImplementation:homeRouter {
     var homeView:homeViewProtocol!
