@@ -17,7 +17,7 @@ class homeRouterImplementation:homeRouter {
     init(view:homeViewProtocol) {
         self.homeView = view
     }
-    func navigateToSavingScreen(viewController: HomeViewController) {
+    func navigateToHomeScreen(viewController: HomeViewController) {
         let savingScreen = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SavingScreen") as! SavingScreenViewController
         savingScreen.SavingDelegate = viewController
         self.homeView.presentViewController(viewController: savingScreen)
